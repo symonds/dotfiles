@@ -3,11 +3,9 @@ if [[ "${OSTYPE}" == "darwin"* ]]; then
   export PATH=/usr/local/sbin:${PATH}
   export PATH=/usr/local/opt/python/libexec/bin:${PATH}
   export PATH=${HOME}/bin:${PATH}
-  export KUBECONFIG=${KUBECONFIG}:${HOME}/.kube/config-eks-test
 fi
 
 # Variables
-export DOTFILES=${HOME}/.local/dotfiles
 export PASSWORD_STORE_DIR=${HOME}/.local/password-store
 export LESSHISTFILE=-
 
@@ -19,7 +17,7 @@ fi
 ZDOTDIR=${HOME}/.local/share/zsh
 
 # GRML Config
-source ${DOTFILES}/zsh/grml.zsh
+source ${HOME}/.local/grml/grml.zsh
 
 # Bindkeys
 bindkey '\e[1;5C' forward-word            # C-Right
@@ -43,10 +41,10 @@ alias wgd='watch --color git diff --color=always'
 alias git-clean-merged='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 
 alias grml-update='grml-update-zsh; grml-update-vim'
-alias grml-update-zsh='wget -O ${DOTFILES}/zsh/grml.zsh http://grml.org/console/zshrc'
-alias grml-update-vim='wget -O ${DOTFILES}/vim/grml.vim http://grml.org/console/vimrc'
+alias grml-update-zsh='wget -O ${HOME}/.local/grml/grml.zsh http://grml.org/console/zshrc'
+alias grml-update-vim='wget -O ${HOME}/.local/grml/grml.vim http://grml.org/console/vimrc'
 
-alias whitefox-flash='echo Press fn+enter to flash board && sleep 10 && sudo dfu-util -D ${DOTFILES}/whitefox/kiibohd.dfu.bin'
+alias whitefox-flash='echo Press fn+enter to flash board && sleep 10 && sudo dfu-util -D ${HOME}/.local/keyboard/whitefox/kiibohd.dfu.bin'
 
 # Updates the GPG-Agent TTY before every command since SSH does not set it.
 function _gpg-agent-update-tty {
