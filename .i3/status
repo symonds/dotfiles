@@ -1,0 +1,32 @@
+general {
+        colors = true
+        interval = 5
+}
+
+order += "yubikey"
+order += "diskdata"
+order += "net_iplist"
+order += "sysdata cpu" 
+order += "sysdata mem" 
+order += "tztime local"
+
+diskdata {
+	format = "{free} GB"
+}
+
+net_iplist {
+        format = "Net: {format_iface}"
+	format_iface = "[{ip4}]"
+}
+
+sysdata cpu {
+	format = "[\?color=cpu CPU: {cpu_used_percent}% ({cpu_temp}{temp_unit})]"
+}
+
+sysdata mem {
+	format = "[\?color=mem Mem: {mem_used}/{mem_total} {mem_unit} ({mem_used_percent}%)]"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
