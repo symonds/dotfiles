@@ -1,0 +1,6 @@
+# Global .gitignore
+# Basic Protection
+.ssh/*_rsa
+.ssh/*.key
+.ssh/*.pub
+.gnupg/*.gpg
