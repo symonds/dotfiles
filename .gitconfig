@@ -3,7 +3,6 @@
 	name = Matt Symonds
 	signingkey = 558E4B49FB800B973BFCA343FFB39C06EA91C3C4
 [core]
-	hooksPath = ~/.local/dotfiles/git/hooks
 	whitespace = trailing-space,space-before-tab
 [push]
 	default = current
