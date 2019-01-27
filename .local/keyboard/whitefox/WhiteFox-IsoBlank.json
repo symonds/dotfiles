@@ -409,6 +409,10 @@
                 "0": {
                     "key": "P",
                     "label": "P"
+                },
+                "1": {
+                    "key": "CONS:PAUSEPLAY",
+                    "label": "PL\/PS"
                 }
             }
         },
@@ -467,8 +471,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "NUMLOCK",
-                    "label": "NMLK"
+                    "key": "INTER6",
+                    "label": "INTER6"
                 }
             }
         },
@@ -881,7 +885,7 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "CTRL",
+                    "key": "LCTRL",
                     "label": "LCTRL"
                 }
             }
