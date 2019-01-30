@@ -4,3 +4,9 @@
 .ssh/*.key
 .ssh/*.pub
 .gnupg/*.gpg
+
+# OS X
+.DS_Store
+
+# Cache
+__pycache__/
