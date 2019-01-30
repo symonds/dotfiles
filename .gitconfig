@@ -4,6 +4,7 @@
 	signingkey = 558E4B49FB800B973BFCA343FFB39C06EA91C3C4
 [core]
 	whitespace = trailing-space,space-before-tab
+	excludesfile = ~/.gitignore
 [push]
 	default = current
 [commit]
