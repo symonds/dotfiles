@@ -36,7 +36,7 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+p exec --no-startup-id PASSWORD_STORE_DIR=${HOME}/.local/password-store passmenu --type
+bindsym $mod+p exec --no-startup-id PASSWORD_STORE_DIR=${HOME}/.local/password-store gopass ls --flat | dmenu | xargs --no-run-if-empty gopass show -c
 
 # change focus
 bindsym $mod+Left focus left

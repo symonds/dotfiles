@@ -46,6 +46,8 @@ alias grml-update-vim='wget -O ${HOME}/.local/grml/grml.vim http://grml.org/cons
 
 alias whitefox-flash='echo Press fn+enter to flash board && sleep 10 && sudo dfu-util -D ${HOME}/.local/keyboard/whitefox/kiibohd.dfu.bin'
 
+alias pass='gopass'
+
 # Updates the GPG-Agent TTY before every command since SSH does not set it.
 function _gpg-agent-update-tty {
   if (( $+commands[gpg-connect-agent] )) && [ -d ${HOME}/.gnupg ]; then
