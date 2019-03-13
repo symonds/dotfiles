@@ -159,5 +159,6 @@ bar {
 workspace_auto_back_and_forth yes
 force_display_urgency_hint 500ms
 new_window pixel 1
+mouse_warping none
 
 exec --no-startup-id sh ~/.i3/i3launch.sh
