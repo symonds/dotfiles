@@ -8,7 +8,7 @@ order += "diskdata"
 order += "net_iplist"
 order += "sysdata cpu" 
 order += "sysdata mem" 
-order += "tztime local"
+order += "clock"
 
 diskdata {
 	format = "{free} GB"
@@ -25,8 +25,4 @@ sysdata cpu {
 
 sysdata mem {
 	format = "[\?color=mem Mem: {mem_used}/{mem_total} {mem_unit} ({mem_used_percent}%)]"
-}
-
-tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
 }
