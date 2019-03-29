@@ -17,6 +17,7 @@ diskdata {
 net_iplist {
         format = "Net: {format_iface}"
 	format_iface = "[{ip4}]"
+	iface_blacklist = ['lo', 'docker*', 'br-*']
 }
 
 sysdata cpu {
