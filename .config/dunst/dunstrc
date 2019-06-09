@@ -5,8 +5,7 @@
     browser = /usr/bin/firefox -new-tab
     dmenu = /usr/bin/dmenu -p dunst:
     follow = none
-    #font = Terminus (TTF) 12
-    font = Monospace 8
+    font = Fira Code Retina 8
     format = "<b>%s</b>\n%b"
     frame_width = 3
     frame_color = "#aaaaaa"

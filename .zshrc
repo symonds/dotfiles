@@ -35,6 +35,10 @@ zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ${HOME}/.local/share/zsh/cache
 
+# Misc
+setopt auto_cd
+setopt append_history share_history histignorealldups
+
 # Aliases
 alias gd='git diff'
 alias wgd='watch --color git diff --color=always'
@@ -47,6 +51,7 @@ alias grml-update-vim='wget -O ${HOME}/.local/grml/grml.vim http://grml.org/cons
 alias whitefox-flash='echo Press fn+enter to flash board && sleep 10 && sudo dfu-util -D ${HOME}/.local/keyboard/whitefox/kiibohd.dfu.bin'
 
 alias pass='gopass'
+alias ls='exa'
 
 # Updates the GPG-Agent TTY before every command since SSH does not set it.
 function _gpg-agent-update-tty {
