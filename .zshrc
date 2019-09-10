@@ -44,7 +44,7 @@ alias gd='git diff'
 alias wgd='watch --color git diff --color=always'
 alias git-clean-merged='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 alias git-clean-all='git for-each-ref --format "%(refname:short)" refs/heads | grep -v master | xargs git branch -D'
-alias git-pull-recursive='find ~/dev -type d -maxdepth 1 -mindepth 1 -exec git --git-dir={}/.git --work-tree={} checkout master \; -exec git --git-dir={}/.git --work-tree={} pull origin master\;'
+alias git-pull-recursive='find ~/dev -type d -maxdepth 1 -mindepth 1 -exec git --git-dir={}/.git --work-tree={} checkout master \; -exec git --git-dir={}/.git --work-tree={} pull origin master \;'
 alias git-who-owns='git ls-files | while read f; do git blame --line-porcelain $f | grep "^author "; done | sort -f | uniq -ic | sort -n'
 
 alias grml-update='grml-update-zsh; grml-update-vim'
