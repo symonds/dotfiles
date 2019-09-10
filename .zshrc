@@ -56,8 +56,6 @@ alias whitefox-flash='echo Press fn+enter to flash board && sleep 10 && sudo dfu
 alias pass='gopass'
 alias ls='exa'
 
-eval $(thefuck --alias)
-
 # Updates the GPG-Agent TTY before every command since SSH does not set it.
 function _gpg-agent-update-tty {
   if (( $+commands[gpg-connect-agent] )) && [ -d ${HOME}/.gnupg ]; then
