@@ -54,8 +54,8 @@ alias whitefox-flash='echo Press fn+enter to flash board && sleep 10 && sudo dfu
 
 alias pass='gopass'
 alias ls='exa'
-alias vim='nvim'
-alias vi='nvim'
+#alias vim='nvim'
+#alias vi='nvim'
 
 # Updates the GPG-Agent TTY before every command since SSH does not set it.
 function _gpg-agent-update-tty {
