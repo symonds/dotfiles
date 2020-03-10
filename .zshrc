@@ -48,14 +48,14 @@ alias git-clean-all='git for-each-ref --format "%(refname:short)" refs/heads | g
 alias git-pull-recursive='find ~/dev -type d -maxdepth 1 -mindepth 1 -exec git --git-dir={}/.git --work-tree={} checkout master \; -exec git --git-dir={}/.git --work-tree={} pull origin master \;'
 alias git-who-owns='git ls-files | while read f; do git blame --line-porcelain $f | grep "^author "; done | sort -f | uniq -ic | sort -n'
 
-alias grml-update='grml-update-zsh; grml-update-vim'
-alias grml-update-zsh='wget -O ${HOME}/.local/grml/grml.zsh http://grml.org/console/zshrc'
-alias grml-update-vim='wget -O ${HOME}/.local/grml/grml.vim http://grml.org/console/vimrc'
+alias grml-update='wget -O ${HOME}/.local/grml/grml.zsh http://grml.org/console/zshrc'
 
 alias whitefox-flash='echo Press fn+enter to flash board && sleep 10 && sudo dfu-util -D ${HOME}/.local/keyboard/whitefox/kiibohd.dfu.bin'
 
 alias pass='gopass'
 alias ls='exa'
+alias vim='nvim'
+alias vi='nvim'
 
 # Updates the GPG-Agent TTY before every command since SSH does not set it.
 function _gpg-agent-update-tty {
