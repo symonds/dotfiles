@@ -4,6 +4,8 @@ if [[ "${OSTYPE}" == "darwin"* ]]; then
   export PATH=/usr/local/opt/python/libexec/bin:${PATH}
   export PATH=${HOME}/bin:${PATH}
   export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
+  sudo scutil --set ComputerName book
+  sudo scutil --set HostName book
 fi
 
 # Variables
@@ -54,8 +56,8 @@ alias whitefox-flash='echo Press fn+enter to flash board && sleep 10 && sudo dfu
 
 alias pass='gopass'
 alias ls='exa'
-#alias vim='nvim'
-#alias vi='nvim'
+alias vim='nvim'
+alias vi='nvim'
 
 # Updates the GPG-Agent TTY before every command since SSH does not set it.
 function _gpg-agent-update-tty {
