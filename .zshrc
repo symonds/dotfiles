@@ -58,7 +58,8 @@ alias pass='gopass'
 alias ls='exa'
 alias vim='nvim'
 alias vi='nvim'
-alias svim='nvim -u ~/.SpaceVim/vimrc'
+alias svim='nvim -u ~/.SpaceVim/vimrc ~/dev'
+alias snvim='svim'
 
 # Updates the GPG-Agent TTY before every command since SSH does not set it.
 function _gpg-agent-update-tty {
