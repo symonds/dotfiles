@@ -19,6 +19,7 @@ fi
 # ZDOTDIR
 ZDOTDIR=${HOME}/.local/share/zsh
 
+zstyle ':prompt:grml:right:setup' items ''
 # GRML Config
 source ${HOME}/.local/grml/grml.zsh
 
