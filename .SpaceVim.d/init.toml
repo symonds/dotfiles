@@ -8,6 +8,7 @@
   enable_statusline_mode = false
   autocomplete_method = "deoplete"
   autocomplete_parens = false
+  bootstrap_before = "custom#before"
 
 [[layers]]
   name = "colorscheme"
@@ -49,3 +50,8 @@
 [[layers]]
   name = "lang#dockerfile"
 
+[[custom_plugins]]
+  name = 'hashivim/vim-terraform'
+
+[[custom_plugins]]
+  name = 'juliosueiras/vim-terraform-completion'
