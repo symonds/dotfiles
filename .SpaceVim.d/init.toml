@@ -40,7 +40,6 @@
 [[layers]]
   name = "format"
 
-
 [[layers]]
   name = "lang#go"
 
