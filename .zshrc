@@ -53,7 +53,7 @@ alias git-who-owns='git ls-files | while read f; do git blame --line-porcelain $
 
 alias grml-update='wget -O ${HOME}/.local/grml/grml.zsh http://grml.org/console/zshrc'
 
-alias whitefox-flash='echo Press fn+enter to flash board && sleep 10 && sudo dfu-util -D ${HOME}/.local/keyboard/whitefox/kiibohd.dfu.bin'
+alias whitefox-flash='echo Press fn+enter to flash board && sleep 10 && sudo dfu-util -D ${HOME}/.local/keyboard/whitefox/keymap.bin'
 
 alias pass='gopass'
 alias ls='exa'
