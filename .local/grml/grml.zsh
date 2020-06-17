@@ -837,8 +837,18 @@ function grmlcomp () {
         _ssh_hosts=()
         _etc_hosts=()
     fi
+
+    local localname
+    if check_com hostname ; then
+      localname=$(hostname)
+    elif check_com hostnamectl ; then
+      localname=$(hostnamectl --static)
+    else
+      localname="$(uname -n)"
+    fi
+
     hosts=(
-        $(hostname)
+        "${localname}"
         "$_ssh_config_hosts[@]"
         "$_ssh_hosts[@]"
         "$_etc_hosts[@]"
@@ -1856,7 +1866,7 @@ done
 function batterydarwin () {
 GRML_BATTERY_LEVEL=''
 local -a table
-table=( ${$(pmset -g ps)[(w)7,8]%%(\%|);} )
+table=( ${$(pmset -g ps)[(w)8,9]%%(\%|);} )
 if [[ -n $table[2] ]] ; then
     case $table[2] in
         charging)
@@ -2509,8 +2519,11 @@ function grml_vcs_to_screen_title () {
 }
 
 function grml_maintain_name () {
-    # set hostname if not running on host with name 'grml'
-    if [[ -n "$HOSTNAME" ]] && [[ "$HOSTNAME" != $(hostname) ]] ; then
+    local localname
+    localname="$(uname -n)"
+
+    # set hostname if not running on local machine
+    if [[ -n "$HOSTNAME" ]] && [[ "$HOSTNAME" != "${localname}" ]] ; then
        NAME="@$HOSTNAME"
     fi
 }
@@ -3475,6 +3488,11 @@ function simple-extract () {
                 USES_STDIN=true
                 USES_STDOUT=false
                 ;;
+            *tar.zst)
+                DECOMP_CMD="tar --zstd -xvf -"
+                USES_STDIN=true
+                USES_STDOUT=false
+                ;;
             *tar)
                 DECOMP_CMD="tar -xvf -"
                 USES_STDIN=true
@@ -3517,6 +3535,11 @@ function simple-extract () {
                 ;;
             *(xz|lzma))
                 DECOMP_CMD="xz -d -c -"
+                USES_STDIN=true
+                USES_STDOUT=true
+                ;;
+            *zst)
+                DECOMP_CMD="zstd -d -c -"
                 USES_STDIN=true
                 USES_STDOUT=true
                 ;;
