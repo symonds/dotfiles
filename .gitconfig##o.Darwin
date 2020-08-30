@@ -15,3 +15,5 @@
 	username = symonds
 [credential]
 	helper = osxkeychain
+[pull]
+	rebase = false
