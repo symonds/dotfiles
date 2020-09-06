@@ -2478,6 +2478,9 @@ else
     function precmd () { (( ${+functions[vcs_info]} )) && vcs_info; }
 fi
 
+# make sure to use right prompt only when not running a command
+is41 && setopt transient_rprompt
+
 # Terminal-title wizardry
 
 function ESC_print () {
@@ -2502,7 +2505,7 @@ function grml_reset_screen_title () {
     # see http://www.faqs.org/docs/Linux-mini/Xterm-Title.html
     [[ ${NOTITLE:-} -gt 0 ]] && return 0
     case $TERM in
-        (xterm*|rxvt*)
+        (xterm*|rxvt*|alacritty)
             set_title ${(%):-"%n@%m: %~"}
             ;;
     esac
@@ -2539,7 +2542,7 @@ function grml_cmd_to_screen_title () {
 
 function grml_control_xterm_title () {
     case $TERM in
-        (xterm*|rxvt*)
+        (xterm*|rxvt*|alacritty)
             set_title "${(%):-"%n@%m:"}" "$2"
             ;;
     esac
@@ -2815,6 +2818,17 @@ graphic chipset."
         function debian2hd () {
             echo "Installing debian to harddisk is possible by using grml-debootstrap."
             return 1
+        }
+    fi
+
+    if check_com -c tmate && check_com -c qrencode ; then
+        function grml-remote-support() {
+            tmate -L grml-remote-support new -s grml-remote-support -d
+            tmate -L grml-remote-support wait tmate-ready
+            tmate -L grml-remote-support display -p '#{tmate_ssh}' | qrencode -t ANSI
+            echo "tmate session: $(tmate -L grml-remote-support display -p '#{tmate_ssh}')"
+            echo
+            echo "Scan this QR code and send it to your support team."
         }
     fi
 }
